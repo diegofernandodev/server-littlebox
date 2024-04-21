@@ -1,0 +1,56 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Solicitud de nueva empresa 
+    style(type="text/css")
+      /* Colores */
+      body
+        background-color: #f7f7f7
+        color: #333
+      h1
+        color: #0073b7
+      a
+        color: #0073b7
+        text-decoration: none
+      /* Fuentes */
+      h1
+        font-family: Arial, sans-serif
+        font-size: 24px
+        margin-top: 0
+      p
+        font-family: Arial, sans-serif
+        font-size: 16px
+        margin-bottom: 10px
+      /* Diseño */
+      .container
+        width: 600px
+        margin: 0 auto
+        padding: 20px
+        border: 1px solid #ddd
+        border-radius: 10px
+      .logo
+        width: 150px
+        height: auto
+        margin-bottom: 20px
+      .content
+        margin-bottom: 20px
+      .footer
+        text-align: center
+        margin-top: 20px
+  body
+    .container
+      img(src="./logo_little_box.png", class="logo", alt="Littlebox")
+      h1 Datos de la empresa:
+     
+      ul
+        li Nombre de empresa: #{nameCompany}
+        li Telefono: #{telephoneCompany}
+        li Nit: #{tenantId}
+        li Correo: #{emailCompany}
+        li Direccion: #{directionCompany}
+      
+      
+      br
+     

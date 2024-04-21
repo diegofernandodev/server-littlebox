@@ -1,0 +1,83 @@
+{
+    "empresas": {
+      "_id": "ObjectId",
+      "tenantId": "identificador_unico_tenant",
+      "nombreEmpresa": "Nombre de la empresa",
+      "direccionEmpresa": "direccion de la Empresa",
+      "telefonoEmpresa": "telefono de la Empresa",
+      "emailEmpresa": "email de la Empresa"
+    },
+    
+    "usuarios": {
+      "_id": "ObjectId",
+      "empresaId": "id_de_la_empresa",
+      "username": "nombre de usuario",
+      "password": "contraseña",
+      "nombre": "Nombre del usuario",
+      "rol": "gerente | administrador | colaborador",
+      "tenantId": "identificador_unico_tenant",
+      "correoElectronico": "correo"
+    },
+  
+    "solicitudes": {
+      "_id": "ObjectId",
+      "tenantId": "identificador_unico_tenant",
+      "empresaId": "id_de_la_empresa",
+      "usuarioId": "id_del_usuario_que_hizo_la_solicitud",
+      "estado": "pendiente | en proceso | aprobado | rechazado",
+      "terceroId": "id_del_tercero_relacionado",
+      "categoriaId": "id_de_la_categoria_relacionada",
+      "detalle": "detalle del gasto de la solicitud",
+      "fecha": "fecha de la solicitud",
+      "valor": "dato number, valor del gasto"
+    },
+  
+    "egresos": {
+      "_id": "ObjectId",
+      "empresaId": "id_de_la_empresa",
+      "solicitudId": "id_de_la_solicitud_relacionada",
+      "terceroId": "id_del_tercero_relacionado",
+      "categoriaId": "id_de_la_categoria_relacionada",
+      "tenantId": "identificador_unico_tenant",
+      "detalle": "detalle del gasto de la solicitud",
+      "fecha": "fecha de la solicitud",
+      "valor": "dato number, valor del gasto",
+      "firma": "enlace firma del solicitante"
+    },
+  
+    "ingresos": {
+      "_id": "ObjectId",
+      "empresaId": "id_de_la_empresa",
+      "solicitudId": "id_de_la_solicitud_relacionada",
+      "tenantId": "identificador_unico_tenant",
+      "detalle": "detalle del gasto de la solicitud",
+      "fecha": "fecha de la solicitud",
+      "valor": "dato number, valor del gasto",
+      "firma": "enlace firma del solicitante"
+    },
+  
+    "terceros": {
+      "_id": "ObjectId",
+      "empresaId": "id_de_la_empresa",
+      "tenantId": "identificador_unico_tenant",
+      "nombreTercero": "Nombre del tercero",
+      "documentoTercero": "documento del tercero",
+      "direccionTercero": "direccion del tercero",
+      "telefonoTercero": "telefono del Tercero",
+      "emailTercero": "corro electronico del tercero"
+    },
+  
+    "categorias": {
+      "_id": "ObjectId",
+      "tenantId": "identificador_unico_tenant",
+      "nombre": "Nombre de la categoría",
+      "global": "bolean para saber si la categoria la puede ver cualquier tenant"
+    },
+  
+    "estado_solicitud": {
+      "_id": "ObjectId",
+      "tenantId": "identificador_unico_tenant",
+      "nombre": "pendiente | en proceso | aprobado | rechazado"
+    }
+  }
+  

@@ -1,0 +1,73 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Registro exitoso - Littlebox
+    style(type="text/css").
+      body {
+        background-color: #f7f7f7;
+        color: #333;
+      }
+      h1 {
+        color: #0073b7;
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        margin-top: 0;
+      }
+      a {
+        color: #0073b7;
+        text-decoration: none;
+      }
+      p {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      small {
+        text-align: justify;
+        display: block;
+        color: gray;
+      }
+      .container {
+        width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+      }
+      .logo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+      .content {
+        margin-bottom: 20px;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+      }
+  body
+    .container
+      img(src="./logo_little_box.png", class="logo", alt="Littlebox")
+      h1 ¡Felicidades, #{name}! Tu registro ha sido aprobado.
+      p Ahora puedes iniciar sesión en Littlebox con las siguientes credenciales:
+      ul
+        li Nombre de usuario: #{email}
+        li Contraseña: #{password}
+      p **Importante:** Debes cambiar tu contraseña al iniciar sesión por primera vez.
+      p Para iniciar sesión, haz clic en el siguiente enlace:
+      a(href="http://littlebox.com/login") Iniciar sesión
+      br
+      p ¡Bienvenido a Littlebox!
+      p El equipo de Littlebox
+      br
+      br
+      small(style="text-align: justify; display: block; color: gray;")
+        | Para resolver cualquier inquietud o comentario ingrese a
+        a(href="http://littlebox.com") littlebox.com Opción Contáctenos y diligencie el formulario Registre Solicitudes o si lo prefiere comuníquese con nuestras líneas de servicio telefónico.
+      br
+      br
+      small(style="text-align: justify; display: block; color: gray;")
+        | Aviso Legal: La información contenida en este mensaje y en los archivos adjuntos es confidencial. Está dirigida exclusivamente a su destinatario, sin la intención de ser conocida por terceros, su carácter es informativo y su responsabilidad exclusiva del lector. Por lo tanto, de conformidad con las normas legales vigentes, su interceptación, sustracción, extravío, reproducción, lectura o uso está prohibido a cualquier persona diferente. Si por error ha recibido éste mensaje por favor discúlpenos, notifíquenoslo y elimínelo. Littlebox ha adoptado mecanismos tendientes a evitar que éste mensaje y sus anexos, se encuentren libres de virus o defectos que puedan llegar a afectar los computadores o los sistemas que lo reciban. Sin embargo, es responsabilidad del destinatario confirmar éste hecho al momento de su recepción y apertura. En consecuencia Littlebox, se exonera de cualquier responsabilidad por daños, alteraciones o perjuicios que se ocasionen en su recepción o uso.
