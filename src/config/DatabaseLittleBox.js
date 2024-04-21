@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 const password = process.env.MONGO_PASSWORD
-const connectionString = `mongodb+srv://littlebox-conect:${password}42TXTiElhC4RjkpI@littlebox-cluster.rkg9n4v.mongodb.net/`
+const connectionString = `mongodb+srv://littlebox-conect:${password}@littlebox-cluster.rkg9n4v.mongodb.net/`
 
 // Conexión a la base de datos MongoDB llamada "LittleBox" mongodb://localhost:27017/
 mongoose
