@@ -3,7 +3,7 @@ name: Deploy Node Application
 on:
   push: 
     branches:
-      - mean-ec2-docker
+      - master
 
 jobs:
   build:
