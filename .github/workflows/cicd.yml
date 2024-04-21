@@ -1,7 +1,7 @@
 name: Deploy Node Application
 
 on:
-  push:
+  push: 
     branches:
       - master
 
@@ -22,11 +22,11 @@ jobs:
         
   deploy:
     needs: build
-    runs-on: docker
+    runs-on: self-hosted
     steps:
       - name: Pull image from docker hub
-        run: docker pull diockerhub/server:latest
+        run: sudo docker pull diockerhub/server:latest
       - name: Delete old container
-        run: docker rm -f server-container || true
+        run: sudo docker rm -f server-container || true
       - name: Run docker container
-        run: docker run -d -p 4000:4000 --name server-container -e MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }} diockerhub/server
+        run: sudo docker run -d -p 4000:4000 --name server-container -e MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }} diockerhub/server   
