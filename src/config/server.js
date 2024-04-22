@@ -37,8 +37,14 @@ appLittlebox.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 //     saveUninitialized: true,
 // }));
 
+const corsOptions = {
+    origin: 'http://3.140.230.73:4200/', // Reemplaza esto con la URL de tu frontend
+    methods: ['GET', 'POST'], // Métodos HTTP permitidos
+    allowedHeaders: ['Content-Type', 'Authorization'], // Cabeceras permitidas
+  };
+
 appLittlebox.use(express.json()); // Habilitar el uso de JSON en las solicitudes HTTP
-appLittlebox.use(cors()); // Configuración de CORS para permitir solicitudes desde otros dominios
+appLittlebox.use(cors(corsOptions)); // Configuración de CORS para permitir solicitudes desde otros dominios
 appLittlebox.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
