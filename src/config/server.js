@@ -38,9 +38,7 @@ appLittlebox.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 // }));
 
 const corsOptions = {
-    origin: 'http://3.140.230.73:4200/', // Reemplaza esto con la URL de tu frontend
-    methods: ['GET', 'POST'], // Métodos HTTP permitidos
-    allowedHeaders: ['Content-Type', 'Authorization'], // Cabeceras permitidas
+    origin: 'http://3.140.230.73:4200',
   };
 
 appLittlebox.use(express.json()); // Habilitar el uso de JSON en las solicitudes HTTP
