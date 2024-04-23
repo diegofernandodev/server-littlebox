@@ -38,7 +38,7 @@ appLittlebox.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 // }));
 
 const corsOptions = {
-    origin: 'http://3.140.230.73:4200',origin: 'http://3.140.230.73:4200', origin:'http://localhost:4200'
+    origin: 'http://3.140.230.73:80',origin: 'http://3.140.230.73:4200', origin:'http://localhost:4200'
   };
 
 appLittlebox.use(express.json()); // Habilitar el uso de JSON en las solicitudes HTTP
