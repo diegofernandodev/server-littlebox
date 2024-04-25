@@ -329,15 +329,15 @@ const cambiarEstadoSolicitud = async (solicitudId, nuevoEstadoId, tenantId) => {
 
     const solicitudActualizada = await solicitudExistente.save();
 
-    // console.log(
-    //   "este es el nuevo id del estado de la solicitud ",
-    //   solicitudActualizada.estado._id,
-    //   "este es el nuevoEstadoId pasado como parametro: ",
-    //   nuevoEstadoId,
-    // );
+    console.log(
+      "este es el nuevo id del estado de la solicitud ",
+      solicitudActualizada.estado._id.toString(),
+      "este es el nuevoEstadoId pasado como parametro: ",
+      nuevoEstadoId,
+    );
 
     // Verificar si el nuevo estado es "finalizado"
-    if (nuevoEstadoId === solicitudActualizada.estado._id) {
+    if (nuevoEstadoId === solicitudActualizada.estado._id.toString()) {
       // Crear egreso de caja utilizando los datos de la solicitud
       const egreso = new Egreso({
         tenantId: solicitudActualizada.tenantId,
@@ -351,12 +351,12 @@ const cambiarEstadoSolicitud = async (solicitudId, nuevoEstadoId, tenantId) => {
         // Otros campos necesarios para el egreso de caja...
       });
 
-      // console.log(
-      //   "egreso creado de solicitud:",
-      //   egreso,
-      //   "tenantId de la solicitud:",
-      //   solicitudActualizada.tenantId,
-      // );
+      console.log(
+        "egreso creado de solicitud:",
+        egreso,
+        "tenantId de la solicitud:",
+        solicitudActualizada.tenantId,
+      );
 
       try {
         // Guardar el egreso de caja
