@@ -337,7 +337,7 @@ const cambiarEstadoSolicitud = async (solicitudId, nuevoEstadoId, tenantId) => {
     );
 
     // Verificar si el nuevo estado es "finalizado"
-    if (nuevoEstadoId === solicitudActualizada.estado._id.toString()) {
+    if (solicitudActualizada.estado._id.toString() === "65d6a464c04706dd1cdafd6e") {
       // Crear egreso de caja utilizando los datos de la solicitud
       const egreso = new Egreso({
         tenantId: solicitudActualizada.tenantId,
