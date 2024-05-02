@@ -310,15 +310,12 @@ const cambiarEstadoSolicitud = async (solicitudId, nuevoEstadoId, tenantId) => {
       model: estadoSolicitudModel,
     });
 
-    // console.log("solicitud existente", solicitudExistente);
-
     if (!solicitudExistente) {
       throw new Error("Solicitud no encontrada");
     }
 
     // Obtener el nombre del estado actual
     const nombreEstado = solicitudExistente.estado?.nombre;
-    // console.log("nombre del estado", nombreEstado);
 
     if (nombreEstado === "finalizado") {
       throw new Error("La solicitud ya ha sido procesada, no se puede cambiar el estado finalizado");
@@ -329,15 +326,8 @@ const cambiarEstadoSolicitud = async (solicitudId, nuevoEstadoId, tenantId) => {
 
     const solicitudActualizada = await solicitudExistente.save();
 
-    console.log(
-      "este es el nuevo id del estado de la solicitud ",
-      solicitudActualizada.estado._id.toString(),
-      "este es el nuevoEstadoId pasado como parametro: ",
-      nuevoEstadoId,
-    );
-
-    // Verificar si el nuevo estado es "finalizado"
-    if (solicitudActualizada.estado._id.toString() === "65d6a464c04706dd1cdafd6e") {
+    // Verificar si el nuevo estado es "aprobado"
+    if (nuevoEstadoId === '65d6a435c04706dd1cdafd6d') {
       // Crear egreso de caja utilizando los datos de la solicitud
       const egreso = new Egreso({
         tenantId: solicitudActualizada.tenantId,
@@ -350,13 +340,6 @@ const cambiarEstadoSolicitud = async (solicitudId, nuevoEstadoId, tenantId) => {
         factura: solicitudActualizada.facturaUrl,
         // Otros campos necesarios para el egreso de caja...
       });
-
-      console.log(
-        "egreso creado de solicitud:",
-        egreso,
-        "tenantId de la solicitud:",
-        solicitudActualizada.tenantId,
-      );
 
       try {
         // Guardar el egreso de caja
@@ -373,8 +356,6 @@ const cambiarEstadoSolicitud = async (solicitudId, nuevoEstadoId, tenantId) => {
           tipoDoc,
         );
         egresoGuardado.egresoId = egresoId;
-
-        // console.log("egreso guardado:", egresoGuardado);
 
         // Obtener el nombre del nuevo estado
         const nuevoEstado = await estadoSolicitudModel.findById(nuevoEstadoId);
